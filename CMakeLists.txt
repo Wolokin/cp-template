@@ -24,13 +24,14 @@ foreach(path ${sources})
     file(GLOB_RECURSE inputs "in/${folder_name}/*")
     foreach(input_loc ${inputs})
         get_filename_component(input ${input_loc} NAME)
+        set(target_name ${name}_${input})
         add_custom_target(
-                "${name}.${input}"
+                ${target_name}
                 COMMAND printf \"======================\\n\"
                 COMMAND ${name} < ${input_loc}
                 COMMAND printf \"\\n======================\\n\"
                 SOURCES ${path}
         )
-        add_dependencies("${name}.${input}" ${name})
+        add_dependencies(${target_name} ${name})
     endforeach()
 endforeach()
