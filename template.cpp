@@ -5,6 +5,14 @@ using namespace std;
 #define loop(i, a, b) for(int i = a; (i) < (b); (i)++)
 #define loopback(i, a, b) for(int i = a; (i) >= (b); (i)--)
 
+void dbg_out() { cerr << endl; }
+template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T) { cerr << ' ' << H; dbg_out(T...); }
+#ifdef LOCAL
+#define dbg(...) cerr << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
+
 typedef unsigned int uint;
 typedef long long ll;
 typedef vector<int> vi;
@@ -18,16 +26,19 @@ template<class T> inline bool chmax(T &a, const T &b) { if (a<b) { a=b; return t
 template<class T> inline bool chmin(T &a, const T &b) { if (b<a) { a=b; return true; } return false; }
 template<class T> inline void yesno(bool f, const T& y = "YES", const T& n = "NO") { cout << (f ? y : n) << "\n"; }
 
-void solve() {
+class Solve {
     int n;
-    cin >> n;
-}
+public:
+    Solve() {
+        cin >> n;
+    }
+};
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
+    int t = 1;
     cin >> t;
-    while(t--) solve();
+    while(t--) Solve();
     return 0;
 }

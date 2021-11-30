@@ -2,7 +2,12 @@ cmake_minimum_required(VERSION 3.16)
 project(cp)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "-Wall -O2")
+set(CMAKE_CXX_FLAGS "-Wall -O2 -ggdb")
+
+add_definitions(-DLOCAL)
+include_directories(${CMAKE_SOURCE_DIR})
+
+add_executable(Template template.cpp)
 
 file(MAKE_DIRECTORY src)
 file(MAKE_DIRECTORY in)
