@@ -24,19 +24,16 @@ template<class T> inline bool chmax(T &a, const T &b) { if (a<b) { a=b; return t
 template<class T> inline bool chmin(T &a, const T &b) { if (b<a) { a=b; return true; } return false; }
 template<class T> inline void yesno(bool f, const T& y = "YES", const T& n = "NO") { cout << (f ? y : n) << "\n"; }
 
-class Solve {
+void solve() {
     int n;
-public:
-    Solve() {
-        cin >> n;
-    }
-};
+    cin >> n;
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;
     cin >> t;
-    while(t--) Solve();
+    while(t--) solve();
     return 0;
 }
