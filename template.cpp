@@ -22,7 +22,8 @@ const int INF = 1<<30, MOD = 1000000007, MAX = 200005;
 int popcount(uint i) { return __builtin_popcount(i); }
 template<class T> inline bool chmax(T &a, const T &b) { if (a<b) { a=b; return true; } return false; }
 template<class T> inline bool chmin(T &a, const T &b) { if (b<a) { a=b; return true; } return false; }
-template<class T> inline void yesno(bool f, const T& y = "YES", const T& n = "NO") { cout << (f ? y : n) << "\n"; }
+#define yesnoret(f) { yesno(f); return; }
+template<class T = string> inline void yesno(bool f, const T& y = "YES", const T& n = "NO") { cout << (f ? y : n) << "\n";}
 
 void solve() {
     int n;
