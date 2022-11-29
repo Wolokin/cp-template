@@ -1,0 +1,6 @@
+
+
+[templates]
+"main.cpp" = "template.cpp"
+"debug.h" = "debug.h"
+"generate.py" = "generate.py"
